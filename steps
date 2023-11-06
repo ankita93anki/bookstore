@@ -1,0 +1,22 @@
+1) -- cd ankita_project/bookstore_backend
+2) -- ./vendor/bin/sail up
+if message shows "Docker is not running" then execute following command which will start server for customer and admin backend
+
+-- sudo ./vendor/bin/sail up
+
+3) open new tab and execute following command inside bookstore_backend
+
+-- sudo docker exec -it bookstore_backend-laravel.test-1 bash
+ 
+ then inside docker container execute following command which will start customer frontend server
+ 
+ -- npm run dev
+
+4) open new tab and execute following command inside bookstore_backend execute following three commands which will start server for admin frontend
+
+ -- sudo docker exec -it bookstore_backend-laravel.test-1 bash
+
+ -- cd bookstore_admin_frontend
+
+ -- npm run dev
+ 

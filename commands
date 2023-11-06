@@ -1,0 +1,69 @@
+sudo docker exec -it bookstore_backend-laravel.test-1 bash
+
+php artisan make:migration create_books_table
+
+php artisan migrate
+
+
+php artisan make:controller BookstoreAdminController --api
+
+
+php artisan make:model Books
+
+
+php artisan route:list
+
+frontend
+1) npm install -g vue-cli
+
+2) vue init webpack bookstore_admin_fronten
+
+3) cd bookstore_admin_fronten
+
+4) 
+  cd bookstore_admin_frontend
+  npm install
+  npm run dev
+
+5) npm install --save axois
+
+
+
+///// 
+vue.app
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <router-view/>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+
+
+
+
+////
+<script setup>
+import BookstoreAdmin from './components/BookstoreAdmin.vue'
+</script>
+
+<template>
+  <BookstoreAdmin />
+</template>
+
